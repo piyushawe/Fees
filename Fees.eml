@@ -118,6 +118,5 @@
 		<level name="Maven: commons-codec:commons-codec:1.10" value="project"/>
 		<level name="Maven: org.javassist:javassist:3.22.0-CR1" value="project"/>
 		<level name="Maven: joda-time:joda-time:2.9.4" value="project"/>
-		<level name="Maven: org.apache.poi:poi:3.9" value="project"/>
 	</levels>
 </component>
