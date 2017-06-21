@@ -65,6 +65,7 @@ public class Runner1 {
                 Cell cell=c.next();
                 list.add(cell);
 
+
             }
         }
         for(int i=0;i<list.size();i++)
