@@ -3,6 +3,7 @@ package Code;
 import com.github.mkolisnyk.cucumber.runner.AfterSuite;
 import com.github.mkolisnyk.cucumber.runner.BeforeSuite;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumber;
+import com.sun.swing.internal.plaf.synth.resources.synth_sv;
 import cucumber.api.CucumberOptions;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -63,7 +64,12 @@ public class Runner1 {
             {
                 Cell cell=c.next();
                 list.add(cell);
+
             }
+        }
+        for(int i=0;i<list.size();i++)
+        {
+            System.out.println(list.get(i));
         }
 
     }
