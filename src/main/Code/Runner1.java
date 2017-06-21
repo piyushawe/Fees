@@ -5,6 +5,8 @@ import com.github.mkolisnyk.cucumber.runner.BeforeSuite;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumber;
 import cucumber.api.CucumberOptions;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -14,6 +16,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 @RunWith(ExtendedCucumber.class)
@@ -33,6 +38,7 @@ import java.io.IOException;
 public class Runner1 {
     @BeforeSuite
     public static void  setup() throws IOException {
+        List list=new ArrayList();
         String loc="D:\\School_login.xlsx";
         File fl= new File(loc);
         FileInputStream in= new FileInputStream(fl);
@@ -48,7 +54,17 @@ public class Runner1 {
            wb = new XSSFWorkbook(in);
         }
         Sheet sh= wb.getSheetAt(0);
-
+        Iterator<Row> it= sh.iterator();
+        while(it.hasNext())
+        {
+            Row row= it.next();
+            Iterator<Cell> c=row.iterator();
+            while(c.hasNext())
+            {
+                Cell cell=c.next();
+                list.add(cell);
+            }
+        }
 
     }
     @AfterSuite
