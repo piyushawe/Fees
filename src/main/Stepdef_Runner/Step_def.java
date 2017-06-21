@@ -1,5 +1,6 @@
 package Stepdef_Runner;
 
+import Code.Runner1;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
@@ -12,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * Created by himanshu on 06/15/2017.
  */
 
-public class Step_def
+public class Step_def extends Runner1
 { WebDriver driver;
     @Before
     public void webdriver_instance()
