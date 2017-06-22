@@ -37,6 +37,7 @@ import java.util.List;
         ,plugin= {"pretty","html:target/cucumber_html_report"}
 )
 public class Runner1 {
+    static Object  Url;
     @BeforeSuite
     public static void  setup() throws IOException {
         List list=new ArrayList();
@@ -74,6 +75,10 @@ public class Runner1 {
             System.out.println(list.get(i));
         }
 */
+        int i=0;
+        Url= list.get(i);
+        System.out.println(Url);
+
 
     }
     @AfterSuite
