@@ -10,6 +10,7 @@ import Code.Runner1;
  * Created by himanshu on 06/15/2017.
  */
 public class Login extends Runner1 {
+    public WebDriver driver;
     Step_def ob1= new Step_def();
     Global_code ob3;
     public void url()

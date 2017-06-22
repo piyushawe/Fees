@@ -22,7 +22,7 @@ import java.util.Properties;
  */
 
 public class Step_def
-{
+{public WebDriver driver;
     public Properties prop;
     Login ob2;
     Global_code ob3;
