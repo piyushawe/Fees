@@ -1,5 +1,6 @@
 package Stepdef_Runner;
 
+import Code.Global_code;
 import Code.Login;
 import Code.Runner1;
 import cucumber.api.java.After;
@@ -21,20 +22,24 @@ import java.util.Properties;
  */
 
 public class Step_def
-{ WebDriver driver;
+{
     public Properties prop;
-    Login ob2=new Login();
+    Login ob2;
+    Global_code ob3;
     @Before
     public void webdriver_instance() throws IOException {
-        System.setProperty("webdriver.chrome.driver","D:\\selenium drivers\\chromedriver_win32new\\chromedriver.exe");
-        driver=new ChromeDriver();
+        ob3=new Global_code();
+        ob3.webdriver_code();
+        //driver.manage().window().maximize();
         prop= new Properties();
         FileInputStream fl1=new FileInputStream("C:\\Users\\himanshu\\IdeaProjects\\Fees\\prop.properties");
         prop.load(fl1);
+
     }
+
     @When("^Enter Url$")
     public void enter_Url(){
-
+        ob2=new Login();
         ob2.url();
     }
 
