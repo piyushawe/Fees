@@ -10,12 +10,12 @@ import Code.Runner1;
  * Created by himanshu on 06/15/2017.
  */
 public class Login extends Runner1 {
-    public WebDriver driver;
+     WebDriver driver;
     Step_def ob1= new Step_def();
-    Global_code ob3;
+    Global_code ob3=new Global_code();
     public void url()
     {
-        ob3.webdriver_code();
+        driver=ob3.webdriver_code();
       driver.navigate().to(Url.toString());
 
     }

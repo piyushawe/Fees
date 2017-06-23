@@ -22,14 +22,14 @@ import java.util.Properties;
  */
 
 public class Step_def
-{public WebDriver driver;
+{ WebDriver driver;
     public Properties prop;
     Login ob2;
     Global_code ob3;
     @Before
     public void webdriver_instance() throws IOException {
         ob3=new Global_code();
-        ob3.webdriver_code();
+        driver=ob3.webdriver_code();
         //driver.manage().window().maximize();
         prop= new Properties();
         FileInputStream fl1=new FileInputStream("C:\\Users\\himanshu\\IdeaProjects\\Fees\\prop.properties");
