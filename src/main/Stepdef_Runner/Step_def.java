@@ -2,17 +2,13 @@ package Stepdef_Runner;
 
 import Code.Global_code;
 import Code.Login;
-import Code.Runner1;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -22,18 +18,14 @@ import java.util.Properties;
  */
 
 public class Step_def
-{ WebDriver driver;
-    public Properties prop;
+{ public WebDriver dr1;
     Login ob2;
     Global_code ob3;
     @Before
     public void webdriver_instance() throws IOException {
         ob3=new Global_code();
-        driver=ob3.webdriver_code();
+        //dr1=ob3.webdriver_code();
         //driver.manage().window().maximize();
-        prop= new Properties();
-        FileInputStream fl1=new FileInputStream("C:\\Users\\himanshu\\IdeaProjects\\Fees\\prop.properties");
-        prop.load(fl1);
 
     }
 
@@ -44,14 +36,16 @@ public class Step_def
     }
 
     @Then("^Enter Username and Password$")
-    public void enter_Username_and_Password() {
-        System.out.println("User");
+    public void enter_Username_and_Password() throws IOException {
+      //  System.out.println("User");
+        ob2.Username_Password();
 
     }
 
     @Then("^Click on login button$")
     public void click_on_login_button() {
-        System.out.println("Login");
+        //System.out.println("Login");
+        ob2.Login();
     }
     @After
     public void close_webdriver_instance()

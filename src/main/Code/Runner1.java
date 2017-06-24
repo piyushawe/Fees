@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.runner.RunWith;
+import org.testng.annotations.DataProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 
 
 @RunWith(ExtendedCucumber.class)
@@ -37,10 +39,15 @@ import java.util.List;
         ,plugin= {"pretty","html:target/cucumber_html_report"}
 )
 public class Runner1 {
-    static Object  Url;
+     static int i=0;
+    static String  Url;
+    static String username;
+    static String password;
+    static Properties prop;
+   static List list;
     @BeforeSuite
     public static void  setup() throws IOException {
-        List list=new ArrayList();
+        list=new ArrayList();
         String loc="D:\\School_login.xlsx";
         File fl= new File(loc);
         FileInputStream in= new FileInputStream(fl);
@@ -74,17 +81,32 @@ public class Runner1 {
         {
             System.out.println(list.get(i));
         }
-*/
-        int i=0;
-        Url= list.get(i);
-        System.out.println(Url);
+*/System.out.println(list.size());
 
+        Url= list.get(i).toString();
+        username=list.get(i+1).toString();
+        password=list.get(i+2).toString();
+        /*System.out.println(Url);
+        System.out.println(username);
+        System.out.println(password);*/
+       prop= new Properties();
+        FileInputStream fl1=new FileInputStream("C:\\Users\\himanshu\\IdeaProjects\\Fees\\prop.properties");
+        prop.load(fl1);
 
     }
+
     @AfterSuite
     public static void teardown()
     {
+     i+=3;
+     if(i==list.size())
+     {
 
+     }
+     else
+     {
+
+     }
     }
 
 }

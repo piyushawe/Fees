@@ -6,27 +6,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import Code.Runner1;
 
+import java.io.IOException;
+
+
 /**
  * Created by himanshu on 06/15/2017.
  */
 public class Login extends Runner1 {
-     WebDriver driver;
-    Step_def ob1= new Step_def();
+    //Step_def ob1= new Step_def();
     Global_code ob3=new Global_code();
+    public WebDriver dr=ob3.webdriver_code();
     public void url()
     {
-        driver=ob3.webdriver_code();
-      driver.navigate().to(Url.toString());
+
+      dr.navigate().to(Url);
 
     }
-    public void Username_Password()
-    {
-        //driver.findElement(By.id(ob1.prop.getProperty("Login.username"))).sendKeys("");
-      //  driver.findElement(By.id(ob1.prop.getProperty("Login.password"))).sendKeys("");
+    public void Username_Password() throws IOException {
+
+        dr.findElement(By.id(prop.getProperty("Login.username"))).sendKeys(username);
+       dr.findElement(By.id(prop.getProperty("Login.password"))).sendKeys(password);
     }
     public void Login()
     {
-        //driver.findElement(By.id(ob1.prop.getProperty("Login.login_button"))).sendKeys("");
+        dr.findElement(By.id(prop.getProperty("Login.login_button"))).click();
     }
 }
 
