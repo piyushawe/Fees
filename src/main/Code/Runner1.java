@@ -53,7 +53,7 @@ public class Runner1 {
         FileInputStream in= new FileInputStream(fl);
         Workbook wb=null;
         String sr=loc.substring(loc.indexOf("."));
-        //System.out.println(sr)qwqweea12ygh;
+        //System.out.println(sr)qwqweea12ygh32;
         if(sr.equals(".xls"))
         {
             wb= new HSSFWorkbook(in);
