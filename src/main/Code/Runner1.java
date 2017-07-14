@@ -54,6 +54,7 @@ public class Runner1 {
         Workbook wb=null;
         String sr=loc.substring(loc.indexOf("."));
         //System.out.println(sr)qwqweea12ygh32;
+        //as
         if(sr.equals(".xls"))
         {
             wb= new HSSFWorkbook(in);
